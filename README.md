@@ -43,11 +43,16 @@ Navigate to the project directory:<br>
 ```
 cd ./baller
 ```
-Then run it:<br>
+install dependencies:
+```
+npm install
+```
+
+then run it:<br>
 ```
 npm start
 ```
-your browser should open up with the game if successfully started.
+your browser should open up with the game if every thing was successful.
 
 ## Note
 You might notice slight physics anomalies, like the ball falling through the board, well... just restart the game, we'll fix that up later :stuck_out_tongue_closed_eyes:
