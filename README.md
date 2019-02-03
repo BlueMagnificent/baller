@@ -59,9 +59,10 @@ You might notice slight physics anomalies, like the ball falling through the boa
 
 Libraries such as tween.js, typed.js and Comnlink were added to the project as [webpack externals](https://webpack.js.org/configuration/externals/)
 
-## ToDo
-* Upgrade the RealityBridge class to become a separate project of its own (this is a todo and not a promise).
+## ToDo (Not A Promise)
+* Upgrade the RealityBridge class to become a separate project of its own.
 * Find a way to tackle some of the physics anomalies.
+* Add support for mobile browsers
 
 ## License
 MIT
