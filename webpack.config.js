@@ -14,7 +14,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   externals: {
-    Ammo: 'Ammo',
     TWEEN: 'TWEEN',
     Typed: 'Typed',
     Comlink: 'Comlink'
