@@ -7,7 +7,13 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack"
   },
-  "keywords": ["webgl", "threejs", "webworker", "ammojs", "3dgame"],
+  "keywords": [
+    "webgl",
+    "threejs",
+    "webworker",
+    "ammojs",
+    "3dgame"
+  ],
   "author": "BlueMagnificent <bluemagnificent@gmail.com>",
   "repository": {
     "type": "git",
