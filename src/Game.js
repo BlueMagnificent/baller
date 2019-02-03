@@ -193,7 +193,6 @@ export default class Game extends Application{
         
         ambientMusic.setVolume( 0.5 );
         ambientMusic.setLoop( true );
-        ambientMusic.play();
 
     }
 
@@ -504,6 +503,7 @@ export default class Game extends Application{
                 {
 
                     this.lockMousePointer();
+                    this.ambientMusic.play();
                     this.startGame();
 
                 }
