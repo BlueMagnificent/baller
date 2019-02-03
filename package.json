@@ -1,16 +1,19 @@
 {
   "name": "baller",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple browser based 3d game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack"
   },
-  "keywords": [],
+  "keywords": ["webgl", "threejs", "webworker", "ammojs", "3dgame"],
   "author": "BlueMagnificent <bluemagnificent@gmail.com>",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlueMagnificent/baller.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "imports-loader": "^0.8.0",
     "webpack": "^4.12.0",
