@@ -22,7 +22,7 @@
 
 
 //import comlink script
-importScripts('/js/comlink.js');
+importScripts('comlink.js');
 
 var Module = { TOTAL_MEMORY: 256*1024*1024 };
 

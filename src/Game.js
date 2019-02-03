@@ -62,10 +62,10 @@ export default class Game extends Application{
         rc.stageForLoading(this.audioLoader.load.bind(this.audioLoader), "assets/audio/spirit-of-the-girl.ogg", "ambient_sound");
 
         this.textureLoader = new THREE.TextureLoader();
-        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "/assets/texture/ball_diffuse.jpg", "ball_diffuse");
-        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "/assets/texture/ball_normal.jpg", "ball_normal");
-        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "/assets/texture/ball_specular.jpg", "ball_specular");
-        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "/assets/texture/dot.png", "dot");
+        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "assets/texture/ball_diffuse.jpg", "ball_diffuse");
+        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "assets/texture/ball_normal.jpg", "ball_normal");
+        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "assets/texture/ball_specular.jpg", "ball_specular");
+        rc.stageForLoading(this.textureLoader.load.bind(this.textureLoader), "assets/texture/dot.png", "dot");
 
 
     }
