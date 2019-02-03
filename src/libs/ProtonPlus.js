@@ -1,6 +1,6 @@
 /**
  * Proton Plus
- * minor addition to Proton Js for emission of particles based on a reference node
+ * minor addition to Proton Js for emission of particles based on a reference node if provided
  * 
  */
 
@@ -106,7 +106,7 @@ Proton.MeshRender.prototype.onParticleUpdatePlus = function(particle) {
 };
 
 
-//Emitter tweak
+//Advanced Emitter
 function AdvEmitter(refnode, pObj){
 
     if(!refnode) throw new Exception("Invalide reference node");
