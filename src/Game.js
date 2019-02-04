@@ -23,7 +23,7 @@ import * as THREE from 'three'
 import Application from './Application'
 import EventType from './libs/EventType'
 import RealityBridge from './libs/RealityBridge'
-import Stats from './libs/stats'
+import Stats from './threejs/stats'
 import textOverlay from './libs/TextOverlay'
 import rc from './libs/ResourceCache';
 import * as MISC from './libs/Misc'
