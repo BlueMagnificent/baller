@@ -28,7 +28,7 @@ import textOverlay from './libs/TextOverlay'
 import rc from './libs/ResourceCache';
 import * as MISC from './libs/Misc'
 import Stage from './libs/Stage'
-require('imports-loader?THREE=THREE!./threejs/GLTFLoader');
+require('imports-loader?THREE=three!./threejs/GLTFLoader');
 
 export default class Game extends Application{
     constructor(opts = {}){
