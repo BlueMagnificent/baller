@@ -4,7 +4,7 @@
 
 -----
 
-A simple rolling ball browser based 3d game built with fun. [Play it here](https://bluemagnificent.com/lab/baller/)
+A simple rolling ball browser based 3d game built with fun. [Play it here](https://bluemagnificent.com/baller/)
 
 ## Libraries Used
 
