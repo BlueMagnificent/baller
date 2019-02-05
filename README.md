@@ -55,7 +55,7 @@ npm start
 your browser should open up with the game if every thing was successful.
 
 ## Note
-You might notice slight physics anomalies, like the ball falling through the board, well... just restart the game, we'll fix that up later :stuck_out_tongue_closed_eyes:
+You might notice slight physics anomalies, like the ball falling out of the board, well... just restart the game, we'll fix that up later :stuck_out_tongue_closed_eyes:
 
 Libraries such as tween.js, typed.js and Comnlink were added to the project as [webpack externals](https://webpack.js.org/configuration/externals/)
 
