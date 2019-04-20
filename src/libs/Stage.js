@@ -139,13 +139,6 @@ export default class Stage {
 
 
     async start( cb ){
-
-        await this.realityBridge.startReality({}, true);
-
-
-        await this.realityBridge.set( {gravity: [0, -250, 0]} );
-        await this.realityBridge.updateReality();
-
         
         this.loadBallerBase();
         await this.createStagePhysics();

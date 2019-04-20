@@ -99,7 +99,7 @@ export default class Game extends Application{
      * @returns nothing
      * @memberof Game
      */
-    onResourceLoaded(err){
+    async onResourceLoaded(err){
 
         //if there was an error then return
         if(err) return console.log(err);
@@ -107,7 +107,7 @@ export default class Game extends Application{
         try {
 
             this.createScene();
-            this.bridgeReality();
+            await this.bridgeReality();
             
             this.createStage();
 
@@ -222,13 +222,18 @@ export default class Game extends Application{
      * 
      * @memberof Game
      */
-    bridgeReality(){
+    async bridgeReality(){
 
         this.realityBridge = null;
 
         if(this.scene !== null)
         {
             this.realityBridge = new RealityBridge(this);
+            
+            await this.realityBridge.startReality({}, true);
+            await this.realityBridge.set( {gravity: [0, -250, 0]} );
+            await this.realityBridge.updateReality();
+            
         }
     }
 
