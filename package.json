@@ -29,6 +29,6 @@
   "dependencies": {
     "async-es": "^2.6.3",
     "three": "^0.136.0",
-    "three.proton.js": "^0.1.7"
+    "three.proton.js": "^0.2.3"
   }
 }

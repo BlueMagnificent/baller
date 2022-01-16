@@ -28,7 +28,7 @@ import textOverlay from './libs/TextOverlay'
 import rc from './libs/ResourceCache';
 import * as MISC from './libs/Misc'
 import Stage from './libs/Stage'
-require('imports-loader?THREE=three!./threejs/GLTFLoader');
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export default class Game extends Application{
     constructor(opts = {}){
@@ -75,7 +75,7 @@ export default class Game extends Application{
 
 
 
-        this.gltfLoader = new THREE.GLTFLoader();
+        this.gltfLoader = new GLTFLoader();
         rc.stageForLoading(this.gltfLoader.load.bind(this.gltfLoader), "assets/baller_base/baller_base.gltf", "baller_base");
 
         this.audioLoader = new THREE.AudioLoader();

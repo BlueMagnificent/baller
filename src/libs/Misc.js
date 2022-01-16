@@ -1,16 +1,6 @@
 
 import * as THREE from 'three'
 
-//create randome color
-function createRandomColor() {
-    return Math.floor( Math.random() * ( 1 << 24 ) );
-}
-
-//create random MeshPhongMaterial material
-function createRandomMaterial() {
-    return new THREE.MeshPhongMaterial( { color: createRandomColor() } );
-}
-
 function intToTimeString (integerTime) {
     let sec_num = parseInt(integerTime, 10); // don't forget the second param
     let hours   = Math.floor(sec_num / 3600);
@@ -23,31 +13,12 @@ function intToTimeString (integerTime) {
     return hours+':'+minutes+':'+seconds;
 }
 
-class BufferGeometryUtil {
-    constructor(){
-        this.geos = {};
-        this.geos['box'] = new THREE.BufferGeometry().fromGeometry( new THREE.BoxGeometry(1,1,1));
-        this.geos['sphere'] = new THREE.BufferGeometry().fromGeometry( new THREE.SphereGeometry(1,16,10));
-        this.geos['cylinder'] = new THREE.BufferGeometry().fromGeometry(new THREE.CylinderGeometry(1,1,1));
-    }
-
-    getBufferGeometry(type){
-        type = this.geos[type] !== undefined ? type : 'box'
-        return this.geos[type]
-    }
-}
-
-const geomUtil = new BufferGeometryUtil();
-
 const deg2Rad = 0.017456;
 const rad2Deg = 57.288;
 
 
 export {
-    createRandomColor,
-    createRandomMaterial,
     intToTimeString,
-    geomUtil,
     deg2Rad,
     rad2Deg
 }

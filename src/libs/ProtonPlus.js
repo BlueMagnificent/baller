@@ -1,10 +1,11 @@
 /**
  * Proton Plus
  * minor addition to Proton Js for emission of particles based on a reference node if provided
+ * and for hack over Mesh Zone
  * 
  */
-
-import Proton from 'imports-loader?THREE=THREE!three.proton.js'
+import * as THREE from 'three';
+import Proton from 'three.proton.js';
 
 //Base render tweak
 Proton.BaseRender.prototype.init = function(proton) {
@@ -34,15 +35,15 @@ Proton.BaseRender.prototype.init = function(proton) {
     this.proton.addEventListener("PARTICLE_DEAD", function(particle) {
         self.onParticleDead.call(self, particle);
     });
-}
+};
 
 Proton.BaseRender.prototype.onParticleCreatedPlus = function(particle) {
 
-}
+};
 
 Proton.BaseRender.prototype.onParticleUpdatePlus = function(particle) {
 
-}
+};
 
 
 //Mesh Render
@@ -173,5 +174,49 @@ AdvEmitter.prototype.integrate = function(time) {
 
 
 Proton.AdvEmitter = AdvEmitter;
+
+
+/**
+ * MeshZoneMod is a threejs mesh zone ( actually a mode of Mesh Zone)
+ * @param {Geometry|Mesh} geometry - a THREE.Geometry or THREE.Mesh object
+ * @example 
+ * var geometry = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+ * var cylinder = new THREE.Mesh( geometry, material );
+ * var meshZone = new Proton.MeshZoneMod(geometry);
+ * or
+ * var meshZone = new Proton.MeshZoneMod(cylinder);
+ * @extends {Proton.Zone}
+ * @constructor
+*/
+
+function MeshZoneMod(geometry, scale) {
+    MeshZoneMod._super_.call(this);
+    if (!!geometry.vertices ) {
+        this.geometry = geometry;
+    } else {
+        throw new Error("invalid geometry for mesh zone");
+    }
+
+    this.scale = scale || 1;
+}
+
+Proton.Util.inherits(MeshZoneMod, Proton.Zone);
+MeshZoneMod.prototype.getPosition = function() {
+    var vertices = this.geometry.vertices;
+    var rVector = vertices[(vertices.length * Math.random()) >> 0];
+    this.vector.x = rVector.x * this.scale;
+    this.vector.y = rVector.y * this.scale;
+    this.vector.z = rVector.z * this.scale;
+    return this.vector;
+}
+
+MeshZoneMod.prototype.crossing = function(particle) {
+    if (this.log) {
+        console.error('Sorry MeshZoneMod does not support crossing method');
+        this.log = false;
+    }
+}
+
+Proton.MeshZoneMod = MeshZoneMod;
 
 export default Proton;

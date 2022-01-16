@@ -28,14 +28,14 @@
 import * as THREE from 'three'
 import * as MISC from './Misc'
 import CamControl from './CamControl'
-import Proton from 'imports-loader?THREE=THREE!./ProtonPlus'
+import Proton from './ProtonPlus'
 
 
 export default class Stage {
 
     constructor({scene = null, camera = null, realityBridge = null, resourceCache = null, listener = null, gameOverCallBack = null}){
 
-        if( scene === null || camera === null || realityBridge === null, resourceCache === null, listener === null, gameOverCallBack === null ) throw Error("Incomplete initialisation paramters");
+        if( scene === null || camera === null || realityBridge === null || resourceCache === null || listener === null || gameOverCallBack === null ) throw Error("Incomplete initialisation paramters");
         
         this.scene = scene;
         this.realityBridge = realityBridge;
@@ -350,9 +350,10 @@ export default class Stage {
         for(var i = 0; i < ar.length; i += 3){
             vertexBuffer.push({x: ar[i], y: ar[i + 1], z: ar[i + 2]})
         }
-        let mesh =  {geometry: {vertices: vertexBuffer} };
+
+        let meshZoneGeo =  {vertices: vertexBuffer };
         
-        this.proton.addEmitter(this.createEmitter(emitNode, mesh));
+        this.proton.addEmitter(this.createEmitter(emitNode, meshZoneGeo));
         this.proton.addRender(new Proton.SpriteRender( this.scene));
 
 
@@ -388,12 +389,12 @@ export default class Stage {
     }
 
 
-    createEmitter(refnode, mesh) {
+    createEmitter(refnode, meshZoneGeo) {
 
         let emitter = this.emitter = new Proton.AdvEmitter(refnode);
         emitter.rate = new Proton.Rate(new Proton.Span(1, 3), new Proton.Span(.02));
         //addInitialize
-        emitter.addInitialize(new Proton.Position(new Proton.MeshZone(mesh, 5)));
+        emitter.addInitialize(new Proton.Position(new Proton.MeshZoneMod(meshZoneGeo, 5)));
         emitter.addInitialize(new Proton.Mass(1));
         emitter.addInitialize(new Proton.Radius(1, 3));
         emitter.addInitialize(new Proton.Life(0.6));
